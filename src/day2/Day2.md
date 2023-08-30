@@ -8,7 +8,7 @@ null, null -> null
 [], [2] -> [2]
 [1,2,4], [1,3,4] -> [1,1,2,3,4,4]
 
-complexity O(n * m)
+complexity O(n + m)
 ```
 </blockquote></details>
 
@@ -83,7 +83,7 @@ complexity O(n)
 [2,4,3], [5,6,4] -> [7,0,8]
 [9,9], [9,9] -> [8,9,1]
 
-complexity O(n * m)
+complexity O(n + m)
 ```
 </blockquote></details>
 
@@ -160,12 +160,14 @@ complexity: insert - O(1), remove - O(1), getRandom - O(1)
 ``` java
     class RandomizedSet {
 
-        Map<Integer, Integer> map = new HashMap<>();
-        List<Integer> list = new ArrayList<>();
-        Random random = new Random();
+        private Map<Integer, Integer> map;
+        private List<Integer> list;
+        private Random random;
 
         public RandomizedSet() {
-
+            map = new HashMap<>();
+            list = new ArrayList<>();
+            random = new Random();
         }
 
         public boolean insert(int val) {
@@ -193,5 +195,5 @@ complexity: insert - O(1), remove - O(1), getRandom - O(1)
             int rndIndex = random.nextInt(list.size());
             return list.get(rndIndex);
         }
-    }    
+    }
 ```

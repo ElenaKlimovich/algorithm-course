@@ -82,12 +82,14 @@ public class LeetCodeSolution2 {
 
     class RandomizedSet {
 
-        Map<Integer, Integer> map = new HashMap<>();
-        List<Integer> list = new ArrayList<>();
-        Random random = new Random();
+        private Map<Integer, Integer> map;
+        private List<Integer> list;
+        private Random random;
 
         public RandomizedSet() {
-
+            map = new HashMap<>();
+            list = new ArrayList<>();
+            random = new Random();
         }
 
         public boolean insert(int val) {
