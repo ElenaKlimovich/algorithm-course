@@ -197,7 +197,7 @@ complexity O(n)
         for (int num: nums) {
             sum += num;
             count += preSum.getOrDefault(sum - k, 0);
-            preSum.merge(sum, 1, Integer::sum);
+            preSum.merge(sum, 1, Integer::sum); // preSum.put(sum, preSum.getOrDefault(sum, 1));
         }
         return count;
     }
