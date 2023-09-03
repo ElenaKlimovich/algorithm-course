@@ -1,4 +1,4 @@
-### <a href="https://leetcode.com/problems/top-k-frequent-words/"></a>
+### <a href="https://leetcode.com/problems/top-k-frequent-words/">692. Top K Frequent Words</a>
 
 <details><summary>Test Cases & Big O</summary><blockquote>
 
@@ -42,7 +42,7 @@ complexity O(n log n)
         return res;
     }
 ```
-### <a href="https://leetcode.com/problems/intersection-of-two-arrays-ii/"></a>
+### <a href="https://leetcode.com/problems/intersection-of-two-arrays-ii/">350. Intersection of Two Arrays II</a>
 
 <details><summary>Test Cases & Big O</summary><blockquote>
 
@@ -82,7 +82,7 @@ complexity O(n+m)
     }
 ```
 
-### <a href="https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/"></a>
+### <a href="https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/">1493. Longest Subarray of 1's After Deleting One Element</a>
 
 <details><summary>Test Cases & Big O</summary><blockquote>
 
@@ -124,7 +124,7 @@ complexity O(n)
 ```
 
 
-### <a href="https://leetcode.com/problems/valid-palindrome-ii/"></a>
+### <a href="https://leetcode.com/problems/valid-palindrome-ii/">680. Valid Palindrome II</a>
 
 <details><summary>Test Cases & Big O</summary><blockquote>
 
@@ -170,7 +170,7 @@ complexity O(n)
     }
 ```
 
-### <a href="https://leetcode.com/problems/merge-intervals/"></a>
+### <a href="https://leetcode.com/problems/merge-intervals/">56. Merge Intervals</a>
 
 <details><summary>Test Cases & Big O</summary><blockquote>
 
