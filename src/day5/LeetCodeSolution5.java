@@ -5,14 +5,6 @@ import java.util.stream.Collectors;
 
 public class LeetCodeSolution5 {
 
-    public static void main(String[] args) {
-//        System.out.println(reverseWords("the sky is blue"));
-//        System.out.println(reverseWords("  hello world  "));
-//        System.out.println(reverseWords("a good   example"));
-//        System.out.println(reverseWords("EPY2giL"));
-
-    }
-
     public int search(int[] nums, int target) {
         if (nums == null || nums.length == 0) {
             return -1;
@@ -21,13 +13,13 @@ public class LeetCodeSolution5 {
         int r = nums.length ;
 
         while (l <= r) {
-            int m = l + ((r - l) / 2);
-            if (nums[m] == target) {
-                return m;
-            } else if (nums[m] > target) {
-                r = m - 1;
+            int mid = (r + l) / 2;
+            if (nums[mid] == target) {
+                return mid;
+            } else if (nums[mid] > target) {
+                r = mid - 1;
             } else {
-                l = m + 1;
+                l = mid + 1;
             }
         }
         return -1;
@@ -58,8 +50,8 @@ public class LeetCodeSolution5 {
 
     class ATM {
 
-        int[] nominals;
-        long[] saves;
+        private int[] nominals;
+        private long[] saves;
 
         public ATM() {
             nominals = new int[] {20, 50, 100, 200, 500};
@@ -74,7 +66,7 @@ public class LeetCodeSolution5 {
 
         public int[] withdraw(int amount) {
             int[] result = new int[5];
-            for (int i=4; i>=0; i--) {
+            for (int i=nominals.length-1; i>=0; i--) {
                 if(amount>=nominals[i]) {
                     int banknotesCounter = (int)Math.min(amount/nominals[i], saves[i]);
                     result[i] = banknotesCounter;

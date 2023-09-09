@@ -9,7 +9,7 @@ null || [] -> -1
 [-1, 2], 2 -> 1
 [-1,0,3], 3 -> 2 
 
-complexity O(n), space O(1)
+complexity O(log n), space O(1)
 ```
 </blockquote></details>
 
@@ -22,13 +22,13 @@ complexity O(n), space O(1)
         int r = nums.length ;
 
         while (l <= r) {
-            int m = l + ((r - l) / 2);
-            if (nums[m] == target) {
-                return m;
-            } else if (nums[m] > target) {
-                r = m - 1;
+            int mid = (r + l) / 2;
+            if (nums[mid] == target) {
+                return mid;
+            } else if (nums[mid] > target) {
+                r = mid - 1;
             } else {
-                l = m + 1;
+                l = mid + 1;
             }
         }
         return -1;
@@ -75,8 +75,8 @@ complexity O(n) space O(n)
 ``` java
     class ATM {
 
-        int[] nominals;
-        long[] saves;
+        private int[] nominals;
+        private long[] saves;
 
         public ATM() {
             nominals = new int[] {20, 50, 100, 200, 500};
@@ -91,7 +91,7 @@ complexity O(n) space O(n)
 
         public int[] withdraw(int amount) {
             int[] result = new int[5];
-            for (int i=4; i>=0; i--) {
+            for (int i=nominals.length-1; i>=0; i--) {
                 if(amount>=nominals[i]) {
                     int banknotesCounter = (int)Math.min(amount/nominals[i], saves[i]);
                     result[i] = banknotesCounter;
