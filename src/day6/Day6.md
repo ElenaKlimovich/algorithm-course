@@ -185,7 +185,7 @@ null -> -1
   ["0","0","0","1","1"]
 ] ->  3
 
-complexity O(n), space O(1)
+complexity O(n*m), space O(1)
 ```
 </blockquote></details>
 
