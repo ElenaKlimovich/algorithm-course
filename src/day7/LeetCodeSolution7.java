@@ -12,16 +12,20 @@ public class LeetCodeSolution7 {
         int l2 = s2.length();
 
         int[] chars1 = new int[26];
+        int[] chars2 = new int[26];
+
         for (int i=0; i<l1; i++) {
             chars1[s1.charAt(i) - 'a']++;
+            chars2[s2.charAt(i) - 'a']++;
         }
 
-        for (int i=0; i<=l2-l1; i++) {
-            String subStr = s2.substring(i, i+l1);
-            int[] chars2 = new int[26];
-            for(int j=0; j<l1; j++) {
-                chars2[subStr.charAt(j) - 'a']++;
-            }
+        if (arraysAreSame(chars1, chars2)) {
+            return true;
+        }
+
+        for (int i=l1; i<l2; i++) {
+            chars2[s2.charAt(i-l1) - 'a']--;
+            chars2[s2.charAt(i) - 'a']++;
             if(arraysAreSame(chars1, chars2)) {
                 return true;
             }

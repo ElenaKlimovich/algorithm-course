@@ -50,6 +50,36 @@ public class LeetCodeSolution1 {
         return true;
     }
 
+    public String compress(String s) {
+
+        if(s == null) {
+            return null;
+        }
+        if(s.length() == 0) {
+            return "";
+        }
+        int p = 0;
+        int i = 0;
+        int counter = 0;
+        StringBuilder sb = new StringBuilder();
+        while (i < s.length()) {
+            counter = 0;
+            p = i;
+            while(p < s.length() && s.charAt(p) == s.charAt(i)) {
+                counter++;
+                p++;
+            }
+
+            sb.append(s.charAt(i));
+
+            if(counter>1) {
+                sb.append(counter);
+            }
+            i = p;
+        }
+        return sb.toString();
+    }
+
     public int compress(char[] chars) {
         if(chars == null || chars.length == 0) {
             return 0;
